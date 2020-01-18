@@ -4,4 +4,4 @@
 
 A, B = gets.split.map(&:to_i)
 
-puts ans
+puts A.lcm(B)

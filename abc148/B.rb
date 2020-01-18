@@ -5,4 +5,4 @@
 N = gets.to_i
 S, T = gets.chomp.split
 
-puts ans
+puts S.chars.zip(T.chars).join
