@@ -4,4 +4,4 @@
 
 ss = gets.chomp
 
-puts ans
+puts ss.chars.count('1')
