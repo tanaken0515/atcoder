@@ -5,4 +5,4 @@
 N = gets.to_i
 ds = Array.new(N) { gets.to_i }
 
-puts ans
+puts ds.uniq.size
