@@ -4,4 +4,4 @@
 
 a, b = gets.split.map(&:to_i)
 
-puts cond ? 'Odd' : 'Even'
+puts (a * b).odd? ? 'Odd' : 'Even'
