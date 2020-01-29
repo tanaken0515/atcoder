@@ -3,10 +3,19 @@
 
 
 N, M = gets.split.map(&:to_i)
-ps = Array.new(M)
-Ss = Array.new(M)
-M.times do |i|
-  ps[i], Ss[i] = gets.split.map(&:to_i)
+hash = Hash.new { |h, key| h[key] = [] }
+M.times do
+  p, s = gets.split
+  hash[p] << s
 end
 
-puts ans
+pass = 0
+penalty = 0
+hash.each do |q, answers|
+  q_penalty = answers.index('AC')
+  if q_penalty
+    pass += 1
+    penalty += q_penalty
+  end
+end
+puts "#{pass} #{penalty}"
