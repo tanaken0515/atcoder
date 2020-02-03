@@ -3,10 +3,12 @@
 
 
 N, M = gets.split.map(&:to_i)
-Ls = Array.new(M)
-Rs = Array.new(M)
-M.times do |i|
-  Ls[i], Rs[i] = gets.split.map(&:to_i)
+left_max = 1
+right_min = N
+M.times do
+  left, right = gets.split.map(&:to_i)
+  left_max = left if left_max < left
+  right_min = right if right_min > right
 end
 
-puts ans
+puts (left_max..right_min).size
