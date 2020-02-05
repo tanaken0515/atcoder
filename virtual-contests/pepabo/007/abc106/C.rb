@@ -5,7 +5,7 @@
 S = gets.chomp
 K = gets.to_i
 
-cut_length = [S.length, K].min
-cut_s = S[0..cut_length]
+cut_position = [S.length, K].min - 1
+cut_s = S[0..cut_position]
 
 puts (cut_s.chars - ['1']).first || '1'
