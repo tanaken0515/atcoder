@@ -4,4 +4,8 @@
 
 r, D, x_2000 = gets.split.map(&:to_i)
 
-puts ans
+x = x_2000
+(1..10).each do
+  x = r * x - D
+  puts x
+end

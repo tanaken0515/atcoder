@@ -3,10 +3,16 @@
 
 
 N = gets.to_i
-Ss = Array.new(N)
-Ps = Array.new(N)
+points_by_city = Hash.new { |h, key| h[key] = [] }
+number_by_point = {}
 N.times do |i|
-  Ss[i], Ps[i] = gets.chomp.split
+  city, point = gets.chomp.split
+  points_by_city[city] << point.to_i
+  number_by_point[point] = i + 1
 end
 
-puts ans
+points_by_city.keys.sort.each do |city|
+  points_by_city[city].sort.reverse.each do |point|
+    puts number_by_point[point.to_s]
+  end
+end
